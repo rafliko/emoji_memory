@@ -1,0 +1,75 @@
+body{
+    background-color: rgb(50, 50, 50);
+    color: white;
+    text-align: center;
+}
+
+.card{
+    position: relative;
+    height: 150px;
+    width: 100px;
+    background-color: orange;
+    border: 5px solid white;
+    border-radius: 10px;
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.25s;
+    transform: rotateY(0deg) scale(1,1);
+}
+
+.open{
+    background-color: white;
+    border: 5px solid orange;
+    transition: all 0.25s;
+    transform: rotateY(180deg) scale(1,1);
+}
+
+.card .symbol{
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    font-size: 75px;
+    transition: all 0.1s;
+    transform: rotateY(0deg) scale(1,1);
+}
+
+.open .symbol{
+    opacity: 1;
+    transition: all 0.1s;
+    transform: rotateY(180deg) scale(1,1);
+}
+
+.destroyed
+{
+    opacity: 0;
+    transform: rotateY(180deg) scale(0,0);
+}
+
+.row{
+    display: flex;
+}
+
+.container
+{
+    /* Środkowanie bloków o różnych szerokościach */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        height: 75px;
+        width: 50px;
+        margin: 5px;
+    }
+
+    .card .symbol{
+        top: 0px;
+        left: 0px;
+        font-size: 40px;
+    }
+  }
